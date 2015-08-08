@@ -1,6 +1,6 @@
 "use strict";
 
 var React = require("react");
-var StartButton = require("./components/StartButton.jsx");
+var Main = require("./components/Main.jsx");
 
-React.render(<StartButton />, document.getElementById("app"));
+React.render(<Main />, document.getElementById("app"));
