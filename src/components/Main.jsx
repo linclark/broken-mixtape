@@ -19,7 +19,7 @@ var Main = React.createClass({
     var {gameInProgress, ...props} = this.state;
     return (
       <div>
-        <StartGame gameInProgress={gameInProgress} />
+        {gameInProgress ? null : <StartGame />}
       </div>
     );
   },

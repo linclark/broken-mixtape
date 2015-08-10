@@ -4,16 +4,13 @@ var React = require("react");
 var GameActions = require("./../actions/GameActions");
 
 var StartGame = React.createClass({
-  propTypes: {
-    gameInProgress: React.PropTypes.bool
-  },
   handleSubmit: function() {
     GameActions.startGame();
   },
   render: function() {
     return (
       <div>
-        {this.props.gameInProgress ? null : <button onClick={this.handleSubmit}>Start</button>}
+        <button onClick={this.handleSubmit}>Start</button>
       </div>
     );
   }
