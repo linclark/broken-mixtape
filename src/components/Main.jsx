@@ -4,39 +4,27 @@ var React = require("react");
 var GameStore = require("./../stores/GameStore");
 var StartGame = require("./StartGame.jsx");
 
-function getGameState() {
-  return {
-    gameInProgress: GameStore.gameInProgress()
-  };
-}
-
 var Main = React.createClass({
 
   getInitialState: function() {
-    return getGameState();
+    return GameStore.getGameState();
   },
-
   componentDidMount: function() {
     GameStore.addChangeListener(this._onChange);
   },
-
   componentWillUnmount: function() {
     GameStore.removeChangeListener(this._onChange);
   },
-
-  /**
-   * @return {object}
-   */
   render: function() {
+    var {gameInProgress, ...props} = this.state;
     return (
       <div>
-        <StartGame gameInProgress={this.state.gameInProgress} />
+        <StartGame gameInProgress={gameInProgress} />
       </div>
     );
   },
-
   _onChange: function() {
-    this.setState(getGameState());
+    this.setState(GameStore.getGameState());
   }
 
 });
