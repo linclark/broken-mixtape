@@ -2,7 +2,7 @@
 
 var React = require("react");
 var GameStore = require("./../stores/GameStore");
-var StartButton = require("./StartButton.jsx");
+var StartGame = require("./StartGame.jsx");
 
 function getGameState() {
   return {
@@ -30,7 +30,7 @@ var TodoApp = React.createClass({
   render: function() {
     return (
       <div>
-        <StartButton gameInProgress={this.state.gameInProgress} />
+        <StartGame gameInProgress={this.state.gameInProgress} />
       </div>
     );
   },

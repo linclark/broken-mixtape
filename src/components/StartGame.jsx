@@ -3,7 +3,7 @@
 var React = require("react");
 var GameActions = require("./../actions/GameActions");
 
-var StartButton = React.createClass({
+var StartGame = React.createClass({
   propTypes: {
     gameInProgress: React.PropTypes.bool
   },
@@ -19,4 +19,4 @@ var StartButton = React.createClass({
   }
 });
 
-module.exports = StartButton;
+module.exports = StartGame;
