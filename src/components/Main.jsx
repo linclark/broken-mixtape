@@ -10,7 +10,7 @@ function getGameState() {
   };
 }
 
-var TodoApp = React.createClass({
+var Main = React.createClass({
 
   getInitialState: function() {
     return getGameState();
@@ -41,4 +41,4 @@ var TodoApp = React.createClass({
 
 });
 
-module.exports = TodoApp;
+module.exports = Main;
