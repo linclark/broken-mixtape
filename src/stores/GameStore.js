@@ -15,11 +15,18 @@ function _startGame() {
 
 var GameStore = assign(EventEmitter.prototype, {
   /**
-   * Check whether the game has been started.
-   * @return {boolean}
+   * Get the current state.
+   * @return {object}
    */
-  gameInProgress: function() {
-    return _gameInProgress;
+  getGameState: function() {
+    return {
+      gameInProgress: _gameInProgress,
+      currentTeam: 1,
+      score: {
+        team1: 1,
+        team2: 1
+      }
+    };
   },
   emitChange: function() {
     this.emit(CHANGE_EVENT);

@@ -3,6 +3,7 @@
 var React = require("react");
 var GameStore = require("./../stores/GameStore");
 var StartGame = require("./StartGame.jsx");
+var Turn = require("./Turn.jsx");
 
 var Main = React.createClass({
 
@@ -17,9 +18,17 @@ var Main = React.createClass({
   },
   render: function() {
     var {gameInProgress, ...props} = this.state;
+    var currentScreen;
+
+    if (!gameInProgress) {
+      currentScreen = <StartGame />
+    }
+    else {
+      currentScreen = <Turn {...props} />
+    }
     return (
       <div>
-        {gameInProgress ? null : <StartGame />}
+        {currentScreen}
       </div>
     );
   },
