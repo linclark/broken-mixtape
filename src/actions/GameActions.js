@@ -8,6 +8,11 @@ var GameActions = {
     GameDispatcher.handleViewAction({
       actionType: GameConstants.START_GAME
     });
+  },
+  startTurn: function() {
+    GameDispatcher.handleViewAction({
+      actionType: GameConstants.START_TURN
+    });
   }
 };
 

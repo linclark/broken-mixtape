@@ -8,9 +8,14 @@ var EventEmitter = require("events").EventEmitter;
 var CHANGE_EVENT = "change";
 
 var _gameInProgress = false;
+var _turnInProgress = false;
 
 function _startGame() {
   _gameInProgress = true;
+}
+
+function _startTurn() {
+  _turnInProgress = true;
 }
 
 var GameStore = assign(EventEmitter.prototype, {
@@ -21,6 +26,7 @@ var GameStore = assign(EventEmitter.prototype, {
   getGameState: function() {
     return {
       gameInProgress: _gameInProgress,
+      turnInProgress: _turnInProgress,
       currentTeam: 1,
       score: {
         team1: 1,
@@ -42,6 +48,10 @@ var GameStore = assign(EventEmitter.prototype, {
     switch (action.actionType) {
       case GameConstants.START_GAME:
         _startGame();
+        break;
+
+      case GameConstants.START_TURN:
+        _startTurn();
         break;
     }
 
