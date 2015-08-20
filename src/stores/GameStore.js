@@ -9,6 +9,11 @@ var CHANGE_EVENT = "change";
 
 var _gameInProgress = false;
 var _turnInProgress = false;
+var _currentTeam = 1;
+var _score = {
+  team1: 0,
+  team2: 0
+};
 
 function _startGame() {
   _gameInProgress = true;
@@ -16,6 +21,20 @@ function _startGame() {
 
 function _startTurn() {
   _turnInProgress = true;
+}
+
+function _loseTurn() {
+  _turnInProgress = false;
+  _toggleTeam();
+  _addPoint();
+}
+
+function _toggleTeam() {
+  _currentTeam = _currentTeam == 1 ? 2 : 1;
+}
+
+function _addPoint() {
+  _score["team" + _currentTeam]++;
 }
 
 var GameStore = assign(EventEmitter.prototype, {
@@ -27,11 +46,8 @@ var GameStore = assign(EventEmitter.prototype, {
     return {
       gameInProgress: _gameInProgress,
       turnInProgress: _turnInProgress,
-      currentTeam: 1,
-      score: {
-        team1: 1,
-        team2: 1
-      }
+      currentTeam: _currentTeam,
+      score: _score
     };
   },
   emitChange: function() {
@@ -52,6 +68,10 @@ var GameStore = assign(EventEmitter.prototype, {
 
       case GameConstants.START_TURN:
         _startTurn();
+        break;
+
+      case GameConstants.LOSE_TURN:
+        _loseTurn();
         break;
     }
 
