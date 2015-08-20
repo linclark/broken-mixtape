@@ -3,7 +3,7 @@
 var React = require("react");
 var GameStore = require("./../stores/GameStore");
 var StartGame = require("./StartGame.jsx");
-var Turn = require("./Turn.jsx");
+var Game = require("./Game");
 
 var Main = React.createClass({
 
@@ -24,7 +24,7 @@ var Main = React.createClass({
       currentScreen = <StartGame />
     }
     else {
-      currentScreen = <Turn {...props} />
+      currentScreen = <Game {...props} />
     }
     return (
       <div>

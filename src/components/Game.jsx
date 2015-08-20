@@ -5,7 +5,7 @@ var StartTurn = require("./StartTurn");
 var Countdown = require("react-countdown-clock");
 var GameActions = require("./../actions/GameActions");
 
-var Turn = React.createClass({
+var Game = React.createClass({
   propTypes: {
     currentTeam: React.PropTypes.string.isRequired,
     turnInProgress: React.PropTypes.bool.isRequired,
@@ -25,4 +25,4 @@ var Turn = React.createClass({
   }
 });
 
-module.exports = Turn;
+module.exports = Game;
