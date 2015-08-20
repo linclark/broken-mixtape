@@ -29,6 +29,11 @@ function _loseTurn() {
   _addPoint();
 }
 
+function _winTurn() {
+  _turnInProgress = false;
+  _addPoint();
+}
+
 function _toggleTeam() {
   _currentTeam = _currentTeam == 1 ? 2 : 1;
 }
@@ -72,6 +77,10 @@ var GameStore = assign(EventEmitter.prototype, {
 
       case GameConstants.LOSE_TURN:
         _loseTurn();
+        break;
+
+      case GameConstants.WIN_TURN:
+        _winTurn();
         break;
     }
 

@@ -2,8 +2,7 @@
 
 var React = require("react");
 var StartTurn = require("./StartTurn");
-var Countdown = require("react-countdown-clock");
-var GameActions = require("./../actions/GameActions");
+var Turn = require("./Turn");
 
 var Game = React.createClass({
   propTypes: {
@@ -17,7 +16,7 @@ var Game = React.createClass({
   render: function() {
     return (
       <div>
-        {this.props.turnInProgress ? <Countdown seconds={1} color="#000" alpha={0.9} size={300} onComplete={GameActions.loseTurn} /> : <StartTurn />}
+        {this.props.turnInProgress ? <Turn /> : <StartTurn />}
         <div>{this.props.score.team1}</div>
         <div>{this.props.score.team2}</div>
       </div>

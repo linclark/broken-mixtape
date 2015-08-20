@@ -18,6 +18,11 @@ var GameActions = {
     GameDispatcher.handleViewAction({
       actionType: GameConstants.LOSE_TURN
     });
+  },
+  winTurn: function() {
+    GameDispatcher.handleViewAction({
+      actionType: GameConstants.WIN_TURN
+    });
   }
 };
 
