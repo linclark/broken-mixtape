@@ -3,7 +3,7 @@
 var React = require("react");
 var GameActions = require("./../actions/GameActions");
 
-var StartGame = React.createClass({
+var StartTurn = React.createClass({
   handleSubmit: function() {
     GameActions.startTurn();
   },
@@ -16,4 +16,4 @@ var StartGame = React.createClass({
   }
 });
 
-module.exports = StartGame;
+module.exports = StartTurn;
