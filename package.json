@@ -15,7 +15,7 @@
     "node-libs-browser": "^0.5.2",
     "object-assign": "^3.0.0",
     "react": "^0.13.3",
-    "react-countdown-clock": "^1.0.3",
+    "react-countdown-clock": "linclark/react-countdown-clock",
     "webpack": "^1.10.1"
   },
   "devDependencies": {
