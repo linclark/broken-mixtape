@@ -15,6 +15,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ["", ".js", ".json", ".jsx"]
+    extensions: ["", ".js", ".json", ".jsx"],
+    fallback: path.join(__dirname, "node_modules")
+  },
+  resolveLoader: {
+    fallback: path.join(__dirname, "node_modules")
   }
 };
