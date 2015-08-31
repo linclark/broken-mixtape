@@ -7,7 +7,7 @@ var Turn = require("./Turn");
 
 var Game = React.createClass({
   propTypes: {
-    currentTeam: React.PropTypes.string.isRequired,
+    currentTeam: React.PropTypes.number.isRequired,
     turnInProgress: React.PropTypes.bool.isRequired
   },
   render: function() {
