@@ -10,7 +10,7 @@ var StartGame = React.createClass({
   render: function() {
     return (
       <div>
-        <button onClick={this.handleSubmit}>Start</button>
+        <button className="start-game" onClick={this.handleSubmit}>Start</button>
       </div>
     );
   }

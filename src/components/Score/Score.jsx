@@ -14,7 +14,7 @@ var Score = React.createClass({
   render: function() {
     return (
       <div className={styles.score}>
-        <div>{this.props.score.team1}</div>
+        <div className="team1-score">{this.props.score.team1}</div>
         <img src={image} />
         <div>{this.props.score.team2}</div>
       </div>

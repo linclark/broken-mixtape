@@ -10,7 +10,7 @@ var WinTurn = React.createClass({
   render: function() {
     return (
       <div>
-        <button onClick={this.handleSubmit}>Got it!</button>
+        <button className="win" onClick={this.handleSubmit}>Got it!</button>
       </div>
     );
   }

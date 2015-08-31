@@ -1,4 +1,9 @@
 ---
+  globals:
+    describe: true
+    expect: true
+    it: true
+    jest: true
   env:
     node: true
     browser: true

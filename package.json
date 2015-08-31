@@ -4,7 +4,7 @@
   "description": "Singing game.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Lin Clark",
   "license": "MIT",
@@ -19,11 +19,24 @@
     "webpack": "^1.10.1"
   },
   "devDependencies": {
+    "babel-jest": "^5.3.0",
     "css-loader": "^0.16.0",
     "eslint": "^1.0.0",
     "eslint-plugin-react": "^3.2.0",
     "file-loader": "^0.8.4",
+    "jest-cli": "^0.5.0",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6"
+  },
+  "jest": {
+    "scriptPreprocessor": "./jest-preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "./node_modules/react"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ]
   }
 }

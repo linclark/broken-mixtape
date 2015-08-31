@@ -10,7 +10,7 @@ var StartTurn = React.createClass({
   render: function() {
     return (
       <div>
-        <button onClick={this.handleSubmit}>Start Turn</button>
+        <button className="start-turn" onClick={this.handleSubmit}>Start Turn</button>
       </div>
     );
   }
