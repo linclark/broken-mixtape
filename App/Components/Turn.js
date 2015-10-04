@@ -12,7 +12,7 @@ class Game extends React.Component {
   render() {
     return (
       <View>
-        <Countdown seconds={30} callback={Actions.loseTurn} />
+        <Countdown seconds={60} callback={Actions.loseTurn} />
         <WinTurn />
       </View>
     );
