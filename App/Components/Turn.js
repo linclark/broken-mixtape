@@ -10,11 +10,9 @@ let Actions = require("./../actions");
 
 class Game extends React.Component {
   render() {
-    let clock =<Countdown seconds={30} callback={Actions.loseTurn} style={{marginTop: -115, marginLeft: 15}}/>
-
     return (
       <View>
-        {clock}
+        <Countdown seconds={30} callback={Actions.loseTurn} />
         <WinTurn />
       </View>
     );
