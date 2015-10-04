@@ -7,7 +7,10 @@ let {
   TouchableHighlight
 } = React;
 
+let Game = require("./Game")
 let StartGame = require("./StartGame")
+
+let Store = require("./../store");
 
 let styles = StyleSheet.create({
   container: {
@@ -29,17 +32,35 @@ let styles = StyleSheet.create({
 });
 
 class Main extends React.Component {
-  handleSubmit() {
+  constructor(props) {
+    super(props)
+    this.state = Store.getState();
+  }
 
+  componentDidMount() {
+    Store.addChangeListener(this._onChange.bind(this));
+  }
+
+  componentWillUnmount() {
+    Store.removeChangeListener(this._onChange.bind(this));
   }
 
   render() {
+    let {gameInProgress, ...props} = this.state;
+    let currentScreen;
+
+    currentScreen = gameInProgress ? <Game {...props} /> : <StartGame />
+
     return (
       <View style={styles.container}>
-        <Text>Test the Main</Text>
-        <StartGame />
+        {currentScreen}
       </View>
     )
+  }
+
+  _onChange() {
+    this.setState(Store.getState());
+    console.log(Store.getState())
   }
 };
 
