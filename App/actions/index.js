@@ -1,9 +1,9 @@
 "use strict";
 
-var Constants = require("./../constants");
-var Dispatcher = require("./../dispatcher");
+let Constants = require("./../constants");
+let Dispatcher = require("./../dispatcher");
 
-var Actions = {
+let Actions = {
   startGame: function() {
     Dispatcher.handleViewAction({
       actionType: Constants.START_GAME
