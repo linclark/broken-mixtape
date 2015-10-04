@@ -8,7 +8,7 @@ let {
   View
 } = React;
 
-let Main = require("./App/Components/Main")
+let Main = require("./App/containers/Root")
 
 class BrokenMixtape extends React.Component{
   render() {

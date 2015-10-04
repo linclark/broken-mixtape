@@ -7,13 +7,11 @@ let {Text, TouchableHighlight} = React;
 let Actions = require("./../actions");
 
 class WinTurn extends React.Component {
-  handleSubmit() {
-    Actions.winTurn();
-  }
-
   render() {
     return (
-      <TouchableHighlight onPress={this.handleSubmit}><Text>Got it!</Text></TouchableHighlight>
+      <TouchableHighlight onPress={this.props.winTurn}>
+        <Text>Got it!</Text>
+      </TouchableHighlight>
     );
   }
 }

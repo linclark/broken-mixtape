@@ -1,28 +1,19 @@
 "use strict";
 
-let Constants = require("./../constants");
-let Dispatcher = require("./../dispatcher");
+let ActionTypes = require("./../constants/ActionTypes");
 
 let Actions = {
   startGame: function() {
-    Dispatcher.handleViewAction({
-      actionType: Constants.START_GAME
-    });
+    return { type: ActionTypes.START_GAME }
   },
   startTurn: function() {
-    Dispatcher.handleViewAction({
-      actionType: Constants.START_TURN
-    });
+    return { type: ActionTypes.START_TURN }
   },
   loseTurn: function() {
-    Dispatcher.handleViewAction({
-      actionType: Constants.LOSE_TURN
-    });
+    return { type: ActionTypes.LOSE_TURN }
   },
   winTurn: function() {
-    Dispatcher.handleViewAction({
-      actionType: Constants.WIN_TURN
-    });
+    return { type: ActionTypes.WIN_TURN }
   }
 };
 

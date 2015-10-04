@@ -6,16 +6,12 @@ let {
   TouchableHighlight
 } = React;
 
-let Actions = require("./../actions");
-
 class StartGame extends React.Component {
-  handleSubmit () {
-    Actions.startGame();
-  }
-
-  render () {
+  render() {
     return (
-      <TouchableHighlight onPress={this.handleSubmit}><Text>Start</Text></TouchableHighlight>
+      <TouchableHighlight onPress={this.props.startGame}>
+        <Text>Start</Text>
+      </TouchableHighlight>
     );
   }
 }

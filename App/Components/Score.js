@@ -8,8 +8,8 @@ class Score extends React.Component{
   render() {
     return (
       <View>
-        <Text>{this.props.score.team1}</Text>
-        <Text>{this.props.score.team2}</Text>
+        <Text>{this.props.score.a}</Text>
+        <Text>{this.props.score.b}</Text>
       </View>
     );
   }
@@ -17,9 +17,9 @@ class Score extends React.Component{
 
 Score.propTypes = {
   score: React.PropTypes.shape({
-    team1: React.PropTypes.number.isRequired,
-    team2: React.PropTypes.number.isRequired
+    "a": React.PropTypes.number.isRequired,
+    "b": React.PropTypes.number.isRequired
   }).isRequired
-} 
+}
 
 module.exports = Score;
