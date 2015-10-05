@@ -13,7 +13,6 @@ let Main = require("./App/containers/Root")
 
 class BrokenMixtape extends Component{
   render() {
-    var name = "test"
     return (
       <Main />
     );
