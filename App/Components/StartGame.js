@@ -2,11 +2,12 @@
 
 let React = require("react-native");
 let {
+  Component,
   Text,
   TouchableHighlight
 } = React;
 
-class StartGame extends React.Component {
+class StartGame extends Component {
   render() {
     return (
       <TouchableHighlight onPress={this.props.startGame}>

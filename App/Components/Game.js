@@ -2,13 +2,16 @@
 
 let React = require("react-native");
 
-let {View} = React;
+let {
+  Component,
+  View
+} = React;
 
 let Score = require("./Score");
 let StartTurn = require("./StartTurn");
 let Turn = require("./Turn");
 
-class Game extends React.Component{
+class Game extends Component{
   render() {
     let {startTurn, ...actions} = this.props.actions;
     return (

@@ -3,6 +3,7 @@
 let React = require("react-native");
 let {
   AppRegistry,
+  Component,
   StyleSheet,
   Text,
   View
@@ -10,7 +11,7 @@ let {
 
 let Main = require("./App/containers/Root")
 
-class BrokenMixtape extends React.Component{
+class BrokenMixtape extends Component{
   render() {
     var name = "test"
     return (

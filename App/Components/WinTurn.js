@@ -2,11 +2,15 @@
 
 let React = require("react-native");
 
-let {Text, TouchableHighlight} = React;
+let {
+  Component,
+  Text,
+  TouchableHighlight
+} = React;
 
 let Actions = require("./../actions");
 
-class WinTurn extends React.Component {
+class WinTurn extends Component {
   render() {
     return (
       <TouchableHighlight onPress={this.props.winTurn}>

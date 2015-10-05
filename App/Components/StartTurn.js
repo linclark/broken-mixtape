@@ -2,9 +2,13 @@
 
 let React = require("react-native");
 
-let {Text, TouchableHighlight} = React;
+let {
+  Component,
+  Text,
+  TouchableHighlight
+} = React;
 
-class StartTurn extends React.Component{
+class StartTurn extends Component {
   render() {
     return (
       <TouchableHighlight onPress={() => this.props.startTurn()}>

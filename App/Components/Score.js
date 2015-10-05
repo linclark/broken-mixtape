@@ -2,9 +2,13 @@
 
 let React = require("react-native");
 
-let {Text, View} = React;
+let {
+  Component,
+  Text,
+  View
+} = React;
 
-class Score extends React.Component{
+class Score extends Component{
   render() {
     return (
       <View>

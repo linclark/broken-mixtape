@@ -3,13 +3,14 @@
 let React = require("react-native");
 
 let {
+  Component,
   Text,
   View
 } = React;
 
 let format = num => num < 10 ? "0"+num : num;
 
-class ReactNativeGameClock extends React.Component {
+class ReactNativeGameClock extends Component {
   constructor(props) {
     super(props);
 

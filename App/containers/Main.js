@@ -4,6 +4,7 @@ let ReactRedux = require("react-redux/native");
 let Actions = require("./../actions");
 
 let {
+  Component,
   View,
   Text,
   StyleSheet,
@@ -32,7 +33,7 @@ let styles = StyleSheet.create({
   },
 });
 
-class Main extends React.Component {
+class Main extends Component {
   render() {
     let {startGame, ...actions} = Redux.bindActionCreators(Actions, this.props.dispatch);
     let {gameInProgress, ...props} = this.props.gameState;
