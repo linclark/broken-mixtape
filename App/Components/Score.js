@@ -4,25 +4,27 @@ let React = require("react-native");
 
 let {
   Component,
+  PropTypes,
   Text,
   View
 } = React;
 
 class Score extends Component{
   render() {
+    let {score} = this.props;
     return (
       <View>
-        <Text>{this.props.score.a}</Text>
-        <Text>{this.props.score.b}</Text>
+        <Text>{score.a}</Text>
+        <Text>{score.b}</Text>
       </View>
     );
   }
 };
 
 Score.propTypes = {
-  score: React.PropTypes.shape({
-    "a": React.PropTypes.number.isRequired,
-    "b": React.PropTypes.number.isRequired
+  score: PropTypes.shape({
+    "a": PropTypes.number.isRequired,
+    "b": PropTypes.number.isRequired
   }).isRequired
 }
 

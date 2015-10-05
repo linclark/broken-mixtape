@@ -5,9 +5,10 @@ let Actions = require("./../actions");
 
 let {
   Component,
-  View,
-  Text,
+  PropTypes,
   StyleSheet,
+  Text,
+  View,
   TouchableHighlight
 } = React;
 
@@ -46,6 +47,10 @@ class Main extends Component {
     )
   }
 };
+
+Main.propTypes = {
+  gameState: PropTypes.object.isRequired
+}
 
 function select(state) {
   return state;

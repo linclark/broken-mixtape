@@ -4,6 +4,7 @@ let React = require("react-native");
 
 let {
   Component,
+  PropTypes,
   Text,
   View
 } = React;
@@ -14,11 +15,12 @@ class ReactNativeGameClock extends Component {
   constructor(props) {
     super(props);
 
-    let callback = this.props.callback !== undefined ? this.props.callback : function() {};
+    let {callback, seconds} = this.props;
+    callback = callback !== undefined ? callback : function() {};
 
-    this._endTime = new Date(new Date().getTime() + this.props.seconds * 1000);
+    this._endTime = new Date(new Date().getTime() + seconds * 1000);
     this.state = {
-      secondsLeft: this.props.seconds,
+      secondsLeft: seconds,
       callback: callback
     }
   }
@@ -32,9 +34,11 @@ class ReactNativeGameClock extends Component {
   }
 
   render() {
+    let {style} = this.props;
+    let {secondsLeft} = this.state;
     return (
-      <View style={this.props.style}>
-        <View><Text>{format(this.state.secondsLeft)}</Text></View>
+      <View style={style}>
+        <View><Text>{format(secondsLeft)}</Text></View>
       </View>
     )
   }
@@ -66,5 +70,10 @@ class ReactNativeGameClock extends Component {
     this.setState({secondsLeft: secondsLeft})
   }
 };
+
+ReactNativeGameClock.propTypes = {
+  callback: PropTypes.func,
+  seconds: PropTypes.number.isRequired
+}
 
 module.exports = ReactNativeGameClock;
