@@ -3,14 +3,37 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node_modules/react-native/packager/packager.sh",
+    "test": "jest"
   },
   "dependencies": {
     "events": "^1.1.0",
     "flux": "^2.1.1",
     "object-assign": "^4.0.1",
-    "react-native": "^0.11.2",
+    "react-native": "^0.11.4",
     "react-redux": "^3.0.1",
     "redux": "^3.0.2"
+  },
+  "devDependencies": {
+    "jest": "^0.1.40",
+    "jest-cli": "^0.5.10",
+    "react": "^0.14.0",
+    "react-addons-test-utils": "^0.14.0"
+  },
+  "jest": {
+    "scriptPreprocessor": "node_modules/react-native/jestSupport/scriptPreprocess.js",
+    "setupEnvScriptFile": "node_modules/react-native/jestSupport/env.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "packager/react-packager/src/Activity/"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "react",
+      "promise",
+      "source-map"
+    ]
   }
 }
